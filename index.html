@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>限定じゃんけんver1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="starcpu stars">⭐️3</div><br>
+        <p class="gamecount"></p>
+        <div class="table">
+            <div class="cpu"></div>
+            <div class="result">
+                <span>Chose Your Card to Start</span>
+
+            </div>
+            <div class="mycard"></div>
+        </div>
+
+        <p class=text>残りのカード Your Remaining Cards</p>
+        <ul class="cards">
+            <li class="card card0" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card card1" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card card2" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card card3" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card card4" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card card5" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card card6" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card card7" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card card8" onclick="R_Click('🖐');">P<br>🖐</li>
+            <li class="card card9" onclick="R_Click('🖐');">P<br>🖐</li>
+            <li class="card card10" onclick="R_Click('🖐');">P<br>🖐</li>
+            <li class="card card11" onclick="R_Click('🖐');">P<br>🖐</li>
+        </ul>
+        <div class="star stars">⭐️3</div>
+        <!--set open card-->
+        <div class="open_cards hidden">
+            OPEN CARDS<br>カードを開く
+        </div>
+
+        <!--game over-->
+        <div class="gameover hidden">
+            GAME OVER<br>
+            別室送り
+        </div>
+        <!--game crear-->
+        <div class="gameclear hidden">
+            GAME CREAR!<br>
+        </div>
+        <div class="overlay hidden"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
