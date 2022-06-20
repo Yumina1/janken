@@ -10,7 +10,7 @@ const cpuCard = document.querySelector('.cpu');
 const myCard = document.querySelector('.mycard');
 const displayResult = document.querySelector('.result');
 const openCards = document.querySelector('.open_cards');
-const refresh = document.querySelector('.refresh');
+const refresh = document.querySelectorAll('.refresh');
 
 let janken, currentStar, currentStarCpu, gameCount, result, curentCpu, curentCard;
 
@@ -23,7 +23,7 @@ const init = function () {
 
     //display
     displayResult.textContent = 'Chose Your Card to Start';
-    gameCounter.textContent = '1';
+    gameCounter.textContent = '';
     gameclear.classList.add('hidden');
     gameover.classList.add('hidden');
     overlay.classList.add('hidden');
@@ -113,4 +113,6 @@ const opening = function () {
 };
 
 openCards.addEventListener('click', opening);
-refresh.addEventListener('click', init);
+refresh.forEach(function (_, i) {
+    refresh[i].addEventListener('click', init);
+});
