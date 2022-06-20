@@ -10,15 +10,33 @@ const cpuCard = document.querySelector('.cpu');
 const myCard = document.querySelector('.mycard');
 const displayResult = document.querySelector('.result');
 const openCards = document.querySelector('.open_cards');
+const refresh = document.querySelector('.refresh');
 
+let janken, currentStar, currentStarCpu, gameCount, result, curentCpu, curentCard;
 
-const janken = ["✊", "✊", "✊", "✊", "✌️", "✌️", "✌️", "✌️", "🖐", "🖐", "🖐", "🖐"];
-let currentStar = 3;
-let currentStarCpu = 3;
-let gameCount = 1;
-let result = '';
-let curentCpu = '';
-let curentCard = '';
+const init = function () {
+    //internal value
+    janken = ["✊", "✊", "✊", "✊", "✌️", "✌️", "✌️", "✌️", "🖐", "🖐", "🖐", "🖐"];
+    currentStar = 3;
+    currentStarCpu = 3;
+    gameCount = 1;
+
+    //display
+    displayResult.textContent = 'Chose Your Card to Start';
+    gameCounter.textContent = '1';
+    gameclear.classList.add('hidden');
+    gameover.classList.add('hidden');
+    overlay.classList.add('hidden');
+    myCard.textContent = '';
+    cpuCard.textContent = '';
+    star.textContent = `⭐️${currentStar}`;
+    starCpu.textContent = `⭐️${currentStarCpu}`;
+    cards.forEach(function (_, i) {
+        cards[i].classList.remove('hidden')
+    });
+};
+
+init();
 
 cards.forEach(function (_, i) {
     //display own cars
@@ -95,3 +113,4 @@ const opening = function () {
 };
 
 openCards.addEventListener('click', opening);
+refresh.addEventListener('click', init);
