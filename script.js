@@ -22,7 +22,6 @@ const init = function () {
     currentStar = 3;
     currentStarCpu = 3;
     gameCount = 1;
-
     //display
     displayResult.textContent = 'Chose Your Card to Start';
     gameCounter.textContent = '';
@@ -38,8 +37,6 @@ const init = function () {
         arr[i].classList.remove('hidden')
     });
 };
-
-console.log();
 
 init();
 
@@ -78,6 +75,8 @@ const R_Click = function (me_janken) {
     janken.splice(janken2, 1);
 };
 
+
+
 const opening = function () {
     overlay.classList.add('hidden');
     //remove open button
@@ -98,39 +97,43 @@ const opening = function () {
     cpuCard.innerHTML = displayCpuCard;
     const starHtml = `<span>⭐️</span>`;
 
+    const resetModal = function () {
+        if (!janken.length) {
+            reset.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        };
+    };
+
     if (result === 1) {
         displayResult.textContent = 'DRAW'
     } else if (result === 2) {
         displayResult.textContent = 'WIN ⭐️+1';
         star.insertAdjacentHTML('beforeend', starHtml)
         starCpu.lastElementChild.remove();
-        if (currentStarCpu <= 0) {
+        if (!currentStarCpu) {
             const crearModal = function () {
                 gameclear.classList.remove('hidden');
                 overlay.classList.remove('hidden');
             };
             setTimeout(crearModal, 800);
+        } else if (currentStarCpu) {
+            setTimeout(resetModal, 800);
         };
     } else if (result === 3) {
         displayResult.textContent = 'LOSE ⭐️-1';
         starCpu.insertAdjacentHTML('beforeend', starHtml)
         star.lastElementChild.remove();
-        if (currentStar <= 0) {
+        if (!currentStar) {
             const overModal = function () {
                 gameover.classList.remove('hidden');
                 overlay.classList.remove('hidden');
-            }
+            };
             setTimeout(overModal, 800);
+        } else if (currentStar) {
+            setTimeout(resetModal, 800);
         };
     };
 
-    if (!janken.length) {
-        const resetModal = function () {
-            reset.classList.remove('hidden');
-            overlay.classList.remove('hidden');
-        }
-        setTimeout(resetModal, 800);
-    };
 };
 
 openCards.addEventListener('click', opening);

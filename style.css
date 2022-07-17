@@ -197,6 +197,7 @@ background: linear-gradient(90deg, rgba(180,58,58,1) 0%, rgba(253,73,29,1) 50%, 
       }
 
     .modal {
+        font-size: large;
       padding:3rem;
     }
 }
