@@ -10,47 +10,56 @@
 
 <body>
     <main>
-        <div class="starcpu stars">⭐️3</div><br>
+        <p class="text">相手の残りライフ</p>
+        <div class="starcpu stars"> </div><br>
         <p class="gamecount"></p>
+
         <div class="table">
             <div class="cpu"></div>
             <div class="result">
                 <span>Chose Your Card to Start</span>
-
             </div>
             <div class="mycard"></div>
         </div>
-
-        <p class=text>残りのカード Your Remaining Cards</p>
+        <br>
         <ul class="cards">
-            <li class="card card0" onclick="R_Click('✊');">G<br>✊</li>
-            <li class="card card1" onclick="R_Click('✊');">G<br>✊</li>
-            <li class="card card2" onclick="R_Click('✊');">G<br>✊</li>
-            <li class="card card3" onclick="R_Click('✊');">G<br>✊</li>
-            <li class="card card4" onclick="R_Click('✌️');">C<br>✌️️</li>
-            <li class="card card5" onclick="R_Click('✌️');">C<br>✌️️</li>
-            <li class="card card6" onclick="R_Click('✌️');">C<br>✌️️</li>
-            <li class="card card7" onclick="R_Click('✌️');">C<br>✌️️</li>
-            <li class="card card8" onclick="R_Click('🖐');">P<br>🖐</li>
-            <li class="card card9" onclick="R_Click('🖐');">P<br>🖐</li>
-            <li class="card card10" onclick="R_Click('🖐');">P<br>🖐</li>
-            <li class="card card11" onclick="R_Click('🖐');">P<br>🖐</li>
+            <li class="card" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card" onclick="R_Click('✊');">G<br>✊</li>
+            <li class="card" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card" onclick="R_Click('✌️');">C<br>✌️️</li>
+            <li class="card" onclick="R_Click('🖐');">P<br>🖐</li>
+            <li class="card" onclick="R_Click('🖐');">P<br>🖐</li>
+            <li class="card" onclick="R_Click('🖐');">P<br>🖐</li>
+            <li class="card" onclick="R_Click('🖐');">P<br>🖐</li>
         </ul>
-        <div class="star stars">⭐️3</div>
+        <p class=text>残りのカード Your Remaining Cards</p>
+        <br>
+        <div class="star stars"> </div>
+        <p class="text">自分の残りライフ Your Remaining Satars</p>
         <!--set open card-->
         <div class="open_cards hidden">
             OPEN CARDS<br>カードを開く
         </div>
 
         <!--game over-->
-        <div class="gameover hidden">
+        <div class="modal gameover hidden">
             GAME OVER<br>
             別室送り
             <div class="refresh">play again<br>もう一度遊ぶ</div>
         </div>
         <!--game crear-->
-        <div class="gameclear hidden">
+        <div class="modal gameclear hidden">
             GAME CREAR!
+            <div class="refresh">play again<br>もう一度遊ぶ</div>
+        </div>
+        <div class="overlay hidden"></div>
+        <!--reset-->
+        <div class="modal reset hidden">
+            Reset
             <div class="refresh">play again<br>もう一度遊ぶ</div>
         </div>
         <div class="overlay hidden"></div>
