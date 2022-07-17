@@ -75,8 +75,6 @@ const R_Click = function (me_janken) {
     janken.splice(janken2, 1);
 };
 
-
-
 const opening = function () {
     overlay.classList.add('hidden');
     //remove open button
@@ -105,7 +103,8 @@ const opening = function () {
     };
 
     if (result === 1) {
-        displayResult.textContent = 'DRAW'
+        displayResult.textContent = 'DRAW';
+        setTimeout(resetModal, 800);
     } else if (result === 2) {
         displayResult.textContent = 'WIN ⭐️+1';
         star.insertAdjacentHTML('beforeend', starHtml)
